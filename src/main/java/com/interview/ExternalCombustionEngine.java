@@ -1,9 +1,10 @@
 package com.interview;
 
-public class InternalCombustionEngine extends Engine {
+public class ExternalCombustionEngine extends Engine {
 
-    public InternalCombustionEngine(FuelType requiredFuelType) {
-		
+
+    public ExternalCombustionEngine(FuelType requiredFuelType) {
+ 		
         this.requiredFuelType = requiredFuelType;
         running = false;
         fuelLevel = 0;
