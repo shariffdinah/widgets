@@ -2,17 +2,24 @@ package com.interview;
 
 public class WidgetMachine {
 	
-	private InternalCombustionEngine engine ;
+	private Engine engine;
 	
 	public WidgetMachine(FuelType fuelType){
-		this.engine = new InternalCombustionEngine(fuelType);
-		engine.fill(fuelType, 50);
+		switch (fuelType){
+			case PETROL: case DIESEL: 
+				this.engine = new InternalCombustionEngine(fuelType);
+				break;
+			case STEAM_COAL: case STEAM_WOOD:
+				this.engine = new ExternalCombustionEngine(fuelType);
+				break;
+		}
+		
+		this.engine.fill(fuelType, 50);
 	}
-	
-    //private InternalCombustionEngine engine = new InternalCombustionEngine(FuelType.PETROL);
 	
 
     public int produceWidgets(int quantity) {
+		
         engine.start();
         int cost = 0;
 
