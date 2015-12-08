@@ -10,4 +10,7 @@ public class ExternalCombustionEngine extends Engine {
         fuelLevel = 0;
     }
 
+	public int getBatchSize(){
+		return 2;
+	}
 }
